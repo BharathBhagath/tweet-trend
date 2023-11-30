@@ -4,7 +4,7 @@ def version   = '2.1.4'
 pipeline {
     agent {
         node {
-            label 'non-prod-agent'
+            label 'non-prod-agent' # "this is our agent name" 
         }
     }
 environment {
