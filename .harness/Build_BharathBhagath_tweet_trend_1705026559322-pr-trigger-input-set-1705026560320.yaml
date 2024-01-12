@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_BharathBhagath_tweet_trend_1705026559322-pr-trigger-input-set
+  identifier: Build_BharathBhagath_tweet_trend_1705026559322prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: BHarath
+  pipeline:
+    identifier: Build_BharathBhagath_tweet_trend_1705026559322
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
