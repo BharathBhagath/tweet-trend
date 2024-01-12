@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_BharathBhagath_tweet_trend_1705026559322-push-trigger-input-set
+  identifier: Build_BharathBhagath_tweet_trend_1705026559322pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: BHarath
+  pipeline:
+    identifier: Build_BharathBhagath_tweet_trend_1705026559322
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
