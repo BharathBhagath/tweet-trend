@@ -27,16 +27,19 @@ environment {
             }
         }
 
-    stage('SonarQube analysis') {
-    environment {
-      scannerHome = tool 'java-sonarqube-scanner'
+stages {
+        stage('SonarQube analysis') {
+            environment {
+                SCANNER_HOME = tool 'java-sonarqube-scanner'
+            steps {
+                withSonarQubeEnv('java-sonarqube-server') {
+                    sh "${env.SCANNER_HOME}/bin/sonar-scanner"
+                }
+            }
+        }
     }
-    steps{
-    withSonarQubeEnv('java-sonarqube-server') { // If you have configured more than one global server connection, you can specify its name
-      sh "${scannerHome}/bin/sonar-scanner"
-    }
-    }
-  }
+
+}
   stage("Quality Gate"){
     steps {
         script {
