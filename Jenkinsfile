@@ -31,8 +31,8 @@ environment {
        environment {
            SCANNER_HOME = tool 'java-sonarqube-scanner'
        }
-      steps {
-        withSonarQubeEnv('java-sonarqube-server') {
+           steps {
+           withSonarQubeEnv('java-sonarqube-server') {
             sh "${SCANNER_HOME}/bin/sonar-scanner"
         }
         }
