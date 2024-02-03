@@ -27,7 +27,6 @@ environment {
             }
         }
 
-stages {
         stage('SonarQube analysis') {
             environment {
                 SCANNER_HOME = tool 'java-sonarqube-scanner'
@@ -39,7 +38,6 @@ stages {
         }
     }
 
-}
   stage("Quality Gate"){
     steps {
         script {
